@@ -1,0 +1,13 @@
+.ImageModal {
+  text-align: center;
+  overflow-y: scroll;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.BigImage {
+  margin: 20px 0 0 0;
+  border-radius: 12px;
+  max-height: 80%;
+  max-width: 80%;
+}
