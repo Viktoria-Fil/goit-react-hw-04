@@ -1,19 +1,16 @@
 import Modal from "react-modal";
+import React, { useEffect } from "react";
 import css from "./ImageModal.module.css";
 
 Modal.setAppElement("#root");
 
 const customStyles = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
+  },
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-
     padding: "20px",
     border: "none",
-
     maxWidth: "100%",
     maxHeight: "90%",
     textAlign: "center",
@@ -21,8 +18,19 @@ const customStyles = {
 };
 
 const ImageModal = ({ isOpen, imageData, onClose }) => {
-  if (!imageData) return null;
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  if (!imageData) return null;
   return (
     <Modal
       isOpen={isOpen}

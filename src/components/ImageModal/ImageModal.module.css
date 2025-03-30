@@ -1,8 +1,12 @@
 .ImageModal {
   text-align: center;
-  overflow-y: scroll;
+  overflow: scroll;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(189, 189, 77);
 }
 
 .BigImage {
@@ -10,4 +14,5 @@
   border-radius: 12px;
   max-height: 80%;
   max-width: 80%;
+  box-shadow: 0 0 79px 0 rgba(164, 2, 113, 0.5);
 }
